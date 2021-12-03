@@ -1,20 +1,8 @@
-from aocd import get_data
 from aocd.models import Puzzle
-from aocd import submit
 
 """
 Day 2: Deep Dive
 """
-
-puzzle = Puzzle(year=2021, day=2)
-data = puzzle.input_data.splitlines()
-
-# parse each line, splitting into a direction and number of units
-def parse(line):
-    direction, units = line.split(" ")
-    return direction, int(units)
-
-commands = list(map(parse, data))
 
 """
 Part 1: 
@@ -26,16 +14,16 @@ Calculate the horizontal position and depth you would have after following the p
 """
 
 ######### NAIVE SOLUTION #########
-horiz, depth = 0, 0
-for line in data:
-    direction, units = line.split(' ')
-    units = int(units)
-    if direction == 'forward':
-        horiz += units
-    elif direction == 'down':
-        depth += units
-    elif direction == 'up':
-        depth -= units
+# horiz, depth = 0, 0
+# for line in data:
+#     direction, units = line.split(' ')
+#     units = int(units)
+#     if direction == 'forward':
+#         horiz += units
+#     elif direction == 'down':
+#         depth += units
+#     elif direction == 'up':
+#         depth -= units
 # puzzle.answer_a = horiz * depth
 
 ######### MORE ROBUST SOLUTION #########
@@ -49,11 +37,6 @@ def move(pos, direction, units):
     elif direction == "up":
         return (pos[0], pos[1] - units)
     raise ValueError
-
-pos = (0, 0) # (horizontal, depth)
-for cmd in commands:
-    pos = move(pos, *cmd)
-# puzzle.answer_a = pos[0] * pos[1]
 
 """
 Part 2:
@@ -76,7 +59,25 @@ def move_with_aim(pos, direction, units):
         return (pos[0], pos[1], pos[2] - units)
     raise ValueError
 
-pos = (0, 0, 0) # (horizontal, depth, aim)
-for cmd in commands:
-    pos = move_with_aim(pos, *cmd)
-puzzle.answer_b = pos[0] * pos[1]
+# puzzle.answer_b = pos[0] * pos[1]
+
+#####################################################
+
+# parse each line, splitting into a direction and number of units
+def parse(line):
+    direction, units = line.split(" ")
+    return direction, int(units)
+
+
+def driver(pos, helper_func):
+    global commands
+    for cmd in commands:
+        pos = helper_func(pos, *cmd)
+    # multiply final horizontal position by final depth position
+    return pos[0] * pos[1]
+
+puzzle = Puzzle(year=2021, day=2)
+data = puzzle.input_data.splitlines()
+commands = list(map(parse, data))
+puzzle.answer_a = driver((0,0), move)
+puzzle.answer_b = driver((0,0,0), move_with_aim)
