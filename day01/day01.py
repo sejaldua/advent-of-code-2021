@@ -1,6 +1,4 @@
-from aocd import get_data
 from aocd.models import Puzzle
-from aocd import submit
 
 """
 Day 1: Sonar Sweep

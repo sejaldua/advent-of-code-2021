@@ -68,7 +68,6 @@ def parse(line):
     direction, units = line.split(" ")
     return direction, int(units)
 
-
 def driver(pos, helper_func):
     global commands
     for cmd in commands:
