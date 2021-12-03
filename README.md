@@ -1,8 +1,8 @@
 # advent-of-code-2021
 
-Getting into the holiday spirit ❄️🌲☃️, 
-preparing for an exciting new career chapter,
-and keeping the Python chops nice and sharp!
+Getting into the holiday spirit ❄️🌲☃️,  
+preparing for an exciting new career chapter,  
+and keeping the Python chops nice and sharp!  
 
 ### GOALS:
 * functional programming
