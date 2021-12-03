@@ -15,8 +15,8 @@ and keeping the Python chops nice and sharp!
 
 | Day | Name | Solution | Stars Earned |
 | :------: | :-------------------: | :--------------: | :--------------: |
-| 01 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [01](day01/day01.py) | ★★ |
-| 02 | [Deep Dive](https://adventofcode.com/2021/day/2) | [01](day02/day02.py) | ★★ |
+| 01 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [01](solution_code/day01.py) | ★★ |
+| 02 | [Deep Dive](https://adventofcode.com/2021/day/2) | [02](solution_code/day02.py) | ★★ |
 | 03 |  |  | ☆☆ |
 | 04 |  |  | ☆☆ |
 | 05 |  |  | ☆☆ |
