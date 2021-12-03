@@ -10,7 +10,9 @@ Part 1:
 - down X increases the depth by X units.
 - up X decreases the depth by X units.
 
-Calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?
+Calculate the horizontal position and depth you would have after 
+following the planned course. What do you get if you multiply your 
+final horizontal position by your final depth?
 """
 
 ######### NAIVE SOLUTION #########
@@ -46,7 +48,9 @@ Part 2:
     - It increases your horizontal position by X units.
     - It increases your depth by your aim multiplied by X.
 
-Using this new interpretation of the commands, calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?
+Using this new interpretation of the commands, calculate the horizontal 
+position and depth you would have after following the planned course. What do 
+you get if you multiply your final horizontal position by your final depth?
 """
 
 # function to adjust position and aim according to direction and number of units
