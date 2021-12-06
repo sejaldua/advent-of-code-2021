@@ -4,13 +4,6 @@
 preparing for an exciting new career chapter,  
 and keeping the Python chops nice and sharp!  
 
-### GOALS:
-* functional programming
-* list comprehensions
-* code refactoring
-* modularity
-* try new languages
-
 ### STATUS
 
 | Day | Name | Solution | Stars Earned |
