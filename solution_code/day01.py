@@ -1,4 +1,6 @@
+from os import write
 from aocd.models import Puzzle
+from utils import get_test_input, write_solution
 
 """
 Day 1: Sonar Sweep
@@ -6,7 +8,7 @@ Day 1: Sonar Sweep
 
 puzzle = Puzzle(year=2021, day=1)
 data = puzzle.input_data
-nums = [int(n) for n in data.splitlines()]
+
 
 """
 Part 1: 
@@ -24,11 +26,18 @@ Count the number of times a depth measurement increases from the previous measur
     263 (increased)
 """
 
-# iterate through each pair of adjacent nums
-# check if rightmost num is greater than leftmost num
-# sum how many times the check was true
-answer_a = sum([1 if nums[i] > nums[i-1] else 0 for i in range(1, len(nums))])
-# puzzle.answer_a = answer_a
+def part_a(test=False):
+    global data
+    if test:
+        data = get_test_input('day01')
+    nums = [int(n) for n in data.splitlines()]
+    answer_a = sum([1 if nums[i] > nums[i-1] else 0 for i in range(1, len(nums))])
+    return answer_a
+
+answer_a = part_a()
+write_solution('day01', 'a', str(answer_a))
+# puzzle.answer_a = answer_a  
+
 
 """
 Part 2:
