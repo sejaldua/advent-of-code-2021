@@ -1,11 +1,9 @@
 from aocd.models import Puzzle
+from utils import get_test_input, write_solution
 
 """
 Day 3: Binary Diagnostic
 """
-
-puzzle = Puzzle(year=2021, day=3)
-data = puzzle.input_data.splitlines()
 
 def get_mode(bits):
     return str(int(sum(bits) >= len(list(filter(lambda x: x == 0, bits)))))
@@ -18,7 +16,7 @@ def get_transposed(data):
     return [list(i) for i in zip(*int_array)]
 
 """
-Part 1: 
+Part A: 
 Each bit in the gamma rate can be determined by finding the MOST common bit in 
 the corresponding position of all numbers in the diagnostic report.
 Each bit in the epsilon rate can be determined by finding the LEAST common bit.
@@ -27,16 +25,22 @@ and epsilon rate, then multiply them together. What is the power consumption of
 the submarine?
 """
 
-transposed = get_transposed(data)
-gamma_bits = list(map(lambda bits: get_mode(bits), transposed))
-epsilon_bits = list(map(lambda x: '0' if x == '1' else '1', gamma_bits))
-gamma_rate = int("".join(gamma_bits), 2)
-epsilon_rate = int("".join(epsilon_bits), 2)  
-print(gamma_rate, epsilon_rate)  
-# puzzle.answer_a = gamma_rate * epsilon_rate
+def part_a(test=False):
+    data = get_test_input('day03').splitlines() if test else Puzzle(year=2021, day=3).input_data.splitlines()
+    transposed = get_transposed(data)
+    gamma_bits = list(map(lambda bits: get_mode(bits), transposed))
+    epsilon_bits = list(map(lambda x: '0' if x == '1' else '1', gamma_bits))
+    gamma_rate = int("".join(gamma_bits), 2)
+    epsilon_rate = int("".join(epsilon_bits), 2)  
+    return gamma_rate * epsilon_rate
+
+assert(part_a(test=True) == 198)
+answer_a = part_a()
+write_solution('day03', 'a', answer_a)
+# puzzle.answer_a = answer_a
 
 """
-Part 2:
+Part B:
 Verify the life support rating, which can be determined by multiplying the 
 oxygen generator rating by the CO2 scrubber rating.
 Before searching for either rating value, start with the full list of binary 
@@ -70,22 +74,13 @@ def get_rating(data, anti=False):
         bit_pos += 1
     return int("".join(filtered[0]), base=2)
 
-# TEST INPUT
-# data = [
-# "00100",
-# "11110",
-# "10110",
-# "10111",
-# "10101",
-# "01111",
-# "00111",
-# "11100",
-# "10000",
-# "11001",
-# "00010",
-# "01010",
-# ]
+def part_b(test=False):
+    data = get_test_input('day03').splitlines() if test else Puzzle(year=2021, day=3).input_data.splitlines()
+    oxygen_generator_rating = get_rating(data, anti=False)
+    co2_scrubber_rating = get_rating(data, anti=True)
+    return oxygen_generator_rating * co2_scrubber_rating
 
-oxygen_generator_rating = get_rating(data, anti=False)
-co2_scrubber_rating = get_rating(data, anti=True)
-# puzzle.answer_b = oxygen_generator_rating * co2_scrubber_rating
+assert(part_b(test=True) == 230)
+answer_b = part_b()
+write_solution('day03', 'b', answer_b)
+# puzzle.answer_b = answer_b
