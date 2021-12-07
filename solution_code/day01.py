@@ -6,12 +6,9 @@ from utils import get_test_input, write_solution
 Day 1: Sonar Sweep
 """
 
-puzzle = Puzzle(year=2021, day=1)
-data = puzzle.input_data
-
 
 """
-Part 1: 
+Part A: 
 Count the number of times a depth measurement increases from the previous measurement. How many measurements are larger than the previous measurement?
 
     199 (N/A - no previous measurement)
@@ -27,21 +24,19 @@ Count the number of times a depth measurement increases from the previous measur
 """
 
 def part_a(test=False):
-    global data
-    if test:
-        data = get_test_input('day01')
+    data = get_test_input('day01') if test else Puzzle(year=2021, day=1).input_data
     nums = [int(n) for n in data.splitlines()]
     answer_a = sum([1 if nums[i] > nums[i-1] else 0 for i in range(1, len(nums))])
     return answer_a
 
 assert(part_a(test=True) == 7)
 answer_a = part_a()
-write_solution('day01', 'a', str(answer_a))
+write_solution('day01', 'a', answer_a)
 # puzzle.answer_a = answer_a  
 
 
 """
-Part 2:
+Part B:
 Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
 
 199  A      
@@ -57,14 +52,12 @@ Consider sums of a three-measurement sliding window. How many sums are larger th
 """
 
 def part_b(test=False):
-    global data
-    if test:
-        data = get_test_input('day01')
+    data = get_test_input('day01') if test else Puzzle(year=2021, day=1).input_data
     nums = [int(n) for n in data.splitlines()]
     answer_b = sum([1 if sum(nums[i:i+3]) > sum(nums[i-1:i+2]) else 0 for i in range(1, len(nums)-2)])
     return answer_b
 
 assert(part_b(test=True) == 5)
 answer_b = part_b()
-write_solution('day01', 'b', str(answer_b))
+write_solution('day01', 'b', answer_b)
 # puzzle.answer_b = answer_b

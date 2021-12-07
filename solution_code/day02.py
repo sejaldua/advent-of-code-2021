@@ -1,11 +1,12 @@
 from aocd.models import Puzzle
+from utils import get_test_input, write_solution
 
 """
 Day 2: Deep Dive
 """
 
 """
-Part 1: 
+Part A: 
 - forward X increases the horizontal position by X units.
 - down X increases the depth by X units.
 - up X decreases the depth by X units.
@@ -41,7 +42,7 @@ def move(pos, direction, units):
     raise ValueError
 
 """
-Part 2:
+Part B:
 - down X increases your aim by X units.
 - up X decreases your aim by X units.
 - forward X does two things:
@@ -72,15 +73,23 @@ def parse(line):
     direction, units = line.split(" ")
     return direction, int(units)
 
-def driver(pos, helper_func):
-    global commands
+def driver(pos, helper_func, test=False):
+    data = get_test_input('day02').splitlines() if test else Puzzle(year=2021, day=2).input_data.splitlines()
+    commands = list(map(parse, data))
     for cmd in commands:
         pos = helper_func(pos, *cmd)
     # multiply final horizontal position by final depth position
     return pos[0] * pos[1]
 
-puzzle = Puzzle(year=2021, day=2)
-data = puzzle.input_data.splitlines()
-commands = list(map(parse, data))
-puzzle.answer_a = driver((0,0), move)
-puzzle.answer_b = driver((0,0,0), move_with_aim)
+
+# Part A
+assert(driver((0,0), move, test=True) == 150)
+answer_a = driver((0,0), move)
+write_solution('day02', 'a', answer_a)
+# puzzle.answer_a = answer_a
+
+# Part B
+assert(driver((0,0,0), move_with_aim, test=True) == 900)
+answer_b = driver((0,0,0), move_with_aim)
+write_solution('day02', 'b', answer_b)
+# puzzle.answer_b = answer_b
