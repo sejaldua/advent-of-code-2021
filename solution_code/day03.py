@@ -5,6 +5,8 @@ from utils import get_test_input, write_solution
 Day 3: Binary Diagnostic
 """
 
+puzzle = Puzzle(year=2021, day=3)
+
 def get_mode(bits):
     return str(int(sum(bits) >= len(list(filter(lambda x: x == 0, bits)))))
 

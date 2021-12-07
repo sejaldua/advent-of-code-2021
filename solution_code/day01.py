@@ -6,6 +6,7 @@ from utils import get_test_input, write_solution
 Day 1: Sonar Sweep
 """
 
+puzzle = Puzzle(year=2021, day=1)
 
 """
 Part A: 

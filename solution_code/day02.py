@@ -5,6 +5,8 @@ from utils import get_test_input, write_solution
 Day 2: Deep Dive
 """
 
+puzzle = Puzzle(year=2021, day=2)
+
 """
 Part A: 
 - forward X increases the horizontal position by X units.
