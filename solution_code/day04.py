@@ -80,7 +80,8 @@ write_solution('day04', 'a', answer_a)
 
 """
 Part A: 
-Figure out which board will win last. Once it wins, what would its final score be?
+Figure out which board will win last. Once it wins, what would its final 
+score be?
 """
 
 def part_b(test=False):
