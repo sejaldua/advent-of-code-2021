@@ -5,7 +5,7 @@ from utils import get_test_input, write_solution
 Day 6: Lanternfish
 """
 
-puzzle = Puzzle(year=2021, day=5)
+puzzle = Puzzle(year=2021, day=6)
 
 # non-optimized version
 def exponential_lanternfish(days, test=False):
