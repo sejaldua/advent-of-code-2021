@@ -79,7 +79,7 @@ write_solution('day04', 'a', answer_a)
 # puzzle.answer_a = answer_a
 
 """
-Part A: 
+Part B: 
 Figure out which board will win last. Once it wins, what would its final 
 score be?
 """
