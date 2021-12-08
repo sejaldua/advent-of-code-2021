@@ -14,7 +14,7 @@ and keeping the Python chops nice and sharp!
 | 04 | [Giant Squid](https://adventofcode.com/2021/day/4) | [04](solution_code/day04.py) | ★★ |
 | 05 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | [05](solution_code/day05.py) | ★★ |
 | 06 | [Lanternfish](https://adventofcode.com/2021/day/6) | [06](solution_code/day06.py) | ★★ |
-| 07 |  |  | ☆☆ |
+| 07 | [The Treachery of Whales](https://adventofcode.com/2021/day/7) | [07](solution_code/day07.py) | ★★ |
 | 08 |  |  | ☆☆ |
 | 09 |  |  | ☆☆ |
 | 10 |  |  | ☆☆ |
