@@ -2,7 +2,7 @@ from aocd.models import Puzzle
 from utils import get_test_input, write_solution
 
 """
-Day 5: Lanternfish
+Day 6: Lanternfish
 """
 
 puzzle = Puzzle(year=2021, day=5)
