@@ -14,7 +14,7 @@ and keeping the Python chops nice and sharp!
 | 02 | [Deep Dive](https://adventofcode.com/2021/day/2) | [02](solution_code/day02.py) | ★★ |
 | 03 | [Binary Diagnostic](https://adventofcode.com/2021/day/3) | [03](solution_code/day03.py) | ★★ |
 | 04 | [Giant Squid](https://adventofcode.com/2021/day/4) | [04](solution_code/day04.py) | ★★ |
-| 05 |  |  | ☆☆ |
+| 05 | [Hydrothermal Venture](https://adventofcode.com/2021/day/5) | [05](solution_code/day05.py) | ★★ |
 | 06 |  |  | ☆☆ |
 | 07 |  |  | ☆☆ |
 | 08 |  |  | ☆☆ |
