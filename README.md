@@ -6,8 +6,6 @@ and keeping the Python chops nice and sharp!
 
 ### STATUS
 
-![day badge](https://img.shields.io/badge/day%20📅-6-blue?style=for-the-badge) ![completed badge](https://img.shields.io/badge/days%20completed-6-red?style=for-the-badge) ![star badge](https://img.shields.io/badge/stars%20⭐-12-yellow?style=for-the-badge)
-
 | Day | Name | Solution | Stars Earned |
 | :------: | :-------------------: | :--------------: | :--------------: |
 | 01 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | [01](solution_code/day01.py) | ★★ |
