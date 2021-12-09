@@ -73,7 +73,9 @@ def breadth_first_search(heightmap, visited, init_coords):
         y, x = queue.pop()
         count += 1
         for dy, dx in (0, -1), (0, 1), (-1, 0), (1, 0):
-            if not coords_in_bounds((y + dy, x + dx), heightmap.shape) or heightmap[y + dy][x + dx] == 9 or heightmap[y + dy][x + dx] <= heightmap[y][x]:
+            if not coords_in_bounds((y + dy, x + dx), heightmap.shape) \
+            or heightmap[y + dy][x + dx] == 9 \
+            or heightmap[y + dy][x + dx] <= heightmap[y][x]:
                 continue
             if (y + dy, x + dx) not in visited:
                 queue.append((y + dy, x + dx))
