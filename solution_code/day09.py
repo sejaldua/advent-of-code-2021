@@ -17,6 +17,14 @@ def compare_vals(val, adj_val):
 def coords_in_bounds(coords, bounds):
     return coords[0] in range(bounds[0]) and coords[1] in range(bounds[1])
 
+def is_min_adjacent(heightmap, row, col):
+     neighbors = [(row, col - 1), (row, col + 1), (row - 1, col), (row + 1, col)]
+     comparison_bools = []
+     for adj_coords in neighbors:
+         if coords_in_bounds(adj_coords, heightmap.shape):
+             comparison_bools.append(compare_vals(heightmap[row][col], heightmap[adj_coords[0]][adj_coords[1]]))
+     return all(comparison_bools)
+
 def find_low_points(heightmap):
     low_points = []
     for row in range(heightmap.shape[0]):
