@@ -18,7 +18,7 @@ and keeping the Python chops nice and sharp!
 | 08 | [Seven Segment Search](https://adventofcode.com/2021/day/8) | [08](solution_code/day08.py) | ★★ |
 | 09 | [Smoke Basin](https://adventofcode.com/2021/day/9) | [09](solution_code/day09.py) | ★★ |
 | 10 | [Syntax Scoring](https://adventofcode.com/2021/day/10) | [10](solution_code/day10.py) | ★★ |
-| 11 |  |  | ☆☆ |
+| 11 | [Dumbo Octopus](https://adventofcode.com/2021/day/11) | [11](solution_code/day11.py) | ★★ |
 | 12 |  |  | ☆☆ |
 | 13 |  |  | ☆☆ |
 | 14 |  |  | ☆☆ |
