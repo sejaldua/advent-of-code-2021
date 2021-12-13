@@ -1,6 +1,5 @@
 from aocd.models import Puzzle
 from utils import get_specific_test_input, write_solution
-import numpy as np
 
 """
 Day 12: Passage Pathing
