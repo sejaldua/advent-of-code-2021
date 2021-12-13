@@ -22,6 +22,11 @@ def get_unfolded_dot_paper(lines: list) -> np.ndarray:
     return grid, folds
 
 def perform_fold(grid, axis, index):
+    """ 
+    Perform a fold by merging both halves of the grid via numpy sum and
+    flip operations
+    """
+    
     if axis == 'y':
         new_grid = grid[:index, :] + np.flipud(grid[index+1:, :])
     else:
@@ -29,7 +34,10 @@ def perform_fold(grid, axis, index):
     return new_grid
     
 def driver(test: bool=False, one_fold: bool=True) -> int:
-    """ Driver which works for Part A and B, only arg to flip is flag"""
+    """ 
+    Driver which works for Part A and B, only arg to flip is one_fold,
+    which indicates whether to execute only one fold or all folds
+    """
     
     data = get_test_input('day13').splitlines() if test else Puzzle(year=2021, day=13).input_data.splitlines()
     grid, folds = get_unfolded_dot_paper(data)
@@ -39,15 +47,18 @@ def driver(test: bool=False, one_fold: bool=True) -> int:
             return np.sum(grid != 0)
     answer_str = "\n".join(["".join(list(map(lambda x: "#" if x > 0 else " ", line))) for line in grid.tolist()])
     return answer_str
-    
 
 """
 Part A:
-Your goal is to find the number of distinct paths that start at start, 
-end at end, and don't visit small caves more than once. There are two types of 
-caves: big caves (written in uppercase, like A, which can be visited any 
-number of times) and small caves (written in lowercase, like b).
-How many paths through this cave system are there that visit small caves at most once?
+- The first section is a list of dots on the transparent paper. 0,0 represents 
+  the top-left coordinate. The first value, x, increases to the right. The 
+  second value, y, increases downward.
+- Then, there is a list of fold instructions. Each instruction indicates a line
+  on the transparent paper and wants you to fold the paper up (for horizontal 
+  y=... lines) or left (for vertical x=... lines).
+- Also notice that some dots can end up overlapping; in this case, the dots 
+  merge together and become a single dot.
+How many dots are visible after completing just the first fold instruction on your transparent paper?
 """
 
 assert(driver(test=True) == 17)
@@ -57,13 +68,9 @@ write_solution('day13', 'a', answer_a)
 
 """
 Part B: 
-Now big caves can be visited any number of times, a single small cave can 
-be visited at most twice, and the remaining small caves can be visited at 
-most once.
-The caves named start and end can only be visited exactly once each: once 
-you leave the start cave, you may not return to it, and once you reach the 
-end cave, the path must end immediately.
-Given these new rules, how many paths through this cave system are there?
+Finish folding the transparent paper according to the instructions. 
+The manual says the code is always eight capital letters.
+What code do you use to activate the infrared thermal imaging camera system?
 """
 
 answer_b = driver(one_fold=False)
