@@ -23,7 +23,7 @@ and keeping the Python chops nice and sharp!
 | 13 | [Transparent Origami](https://adventofcode.com/2021/day/13) | [13](solution_code/day13.py) | ★★ |
 | 14 | [Extended Polymerization](https://adventofcode.com/2021/day/14) | [14](solution_code/day14.py) | ★★ |
 | 15 | [Chiton](https://adventofcode.com/2021/day/15) | [15](solution_code/day15.py) | ★★ |
-| 16 |  |  | ☆☆ |
+| 16 | [Packet Decoder](https://adventofcode.com/2021/day/16) | [16](solution_code/day16.py) | ★★ |
 | 17 |  |  | ☆☆ |
 | 18 |  |  | ☆☆ |
 | 19 |  |  | ☆☆ |
