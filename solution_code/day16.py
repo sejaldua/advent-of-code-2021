@@ -4,7 +4,7 @@ from operator import mul, lt, gt, eq
 from functools import reduce, partial
 
 """
-Day 15: Packet Decoder
+Day 16: Packet Decoder
 """
 
 puzzle = Puzzle(year=2021, day=16) 
