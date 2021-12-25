@@ -24,7 +24,7 @@ and keeping the Python chops nice and sharp!
 | 14 | [Extended Polymerization](https://adventofcode.com/2021/day/14) | [14](solution_code/day14.py) | ★★ |
 | 15 | [Chiton](https://adventofcode.com/2021/day/15) | [15](solution_code/day15.py) | ★★ |
 | 16 | [Packet Decoder](https://adventofcode.com/2021/day/16) | [16](solution_code/day16.py) | ★★ |
-| 17 |  |  | ☆☆ |
+| 17 | [Trick Shot](https://adventofcode.com/2021/day/17) | [17](solution_code/day17.py) | ★★ |
 | 18 |  |  | ☆☆ |
 | 19 |  |  | ☆☆ |
 | 20 |  |  | ☆☆ |
